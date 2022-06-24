@@ -11,11 +11,11 @@ solarMass = 1.989 * math.pow(10, 30)
 lightYear = 9.4607305 * math.pow(10, 15)
 AU = 149_597_870_000
 cwd = os.getcwd()
-background = pygame.image.load(f"{cwd}\\PyGame Gravity\\textures\\background.jpg").convert_alpha()
+background = pygame.image.load(f"{cwd}\\textures\\background.jpg").convert_alpha()
 background_rect = background.get_rect(topleft=(0, 0))
-earth_ball = pygame.image.load(f"{cwd}\\PyGame Gravity\\textures\\earth.png").convert_alpha()
+earth_ball = pygame.image.load(f"{cwd}\\textures\\earth.png").convert_alpha()
 earth_ball_rect = earth_ball.get_rect(midtop=(1200, 200))
-sun_ball = pygame.image.load(f"{cwd}\\PyGame Gravity\\textures\\sun.png").convert_alpha()
+sun_ball = pygame.image.load(f"{cwd}\\textures\\sun.png").convert_alpha()
 sun_ball_rect = sun_ball.get_rect(midtop=(250, 200))
 class CelestialBody(): 
     def __init__(self, mass, radius):
@@ -26,7 +26,7 @@ def gravcalc(m1, m2, r):
     F = ((G * m1 * m2) / math.pow(r, 2))
     return F
 
-ton618 = CelestialBody(solarMass * 66000000000, 1.949 * math.pow(10, 14))
+ton618 = CelestialBody(solarMass * 66000000000, AU * 1300)
 earth = CelestialBody(5.972 * math.pow(10, 24), 6371000)
 sun = CelestialBody(solarMass, 696340000)
 
